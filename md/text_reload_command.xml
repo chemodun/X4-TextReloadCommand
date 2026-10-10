@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="TextReloadCommand" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+
+  <cues>
+    <library name="ReadDebugChances" purpose="include_actions">
+      <actions>
+        <set_value name="$textReloadDebugLevel" exact="if @player.entity.$TextReloadCommandConfig.$debugLevel != null
+          then player.entity.$TextReloadCommandConfig.$debugLevel else 'none'" />
+        <set_value name="$debugChance" exact="if @$textReloadDebugLevel == null or @$textReloadDebugLevel == 'none' then 0 else 100" />
+        <set_value name="$traceChance" exact="if @$textReloadDebugLevel == 'trace' then 100 else 0" />
+        <remove_value name="$textReloadDebugLevel" />
+      </actions>
+    </library>
+
+    <library name="ClearDebugChances" purpose="include_actions">
+      <actions>
+        <remove_value name="$debugChance" />
+        <remove_value name="$traceChance" />
+      </actions>
+    </library>
+
+    <library name="Ensure_Config" purpose="include_actions">
+      <actions>
+        <set_value name="$cfg" exact="table[
+          $debugLevel = 'none',
+          $chatReply = 1,
+        ]" />
+        <do_if value="@player.entity.$TextReloadCommandConfig == null">
+          <set_value name="player.entity.$TextReloadCommandConfig" exact="$cfg" />
+        </do_if>
+        <do_else>
+          <do_for_each name="$key" in="$cfg">
+            <do_if value="not player.entity.$TextReloadCommandConfig.{$key}?">
+              <set_value name="player.entity.$TextReloadCommandConfig.{$key}" exact="$cfg.{$key}" />
+            </do_if>
+          </do_for_each>
+        </do_else>
+        <remove_value name="$cfg" />
+      </actions>
+    </library>
+
+    <cue name="Init" version="1">
+      <actions>
+        <include_actions ref="Ensure_Config" />
+        <raise_lua_event name="'TextReloadCommand.ConfigChanged'" />
+      </actions>
+      <cues>
+
+        <cue name="On_Game_Loaded" instantiate="true" version="1">
+          <conditions>
+            <event_game_loaded />
+          </conditions>
+          <actions>
+            <include_actions ref="Ensure_Config" />
+            <raise_lua_event name="'TextReloadCommand.ConfigChanged'" />
+          </actions>
+        </cue>
+
+        <!-- A setting changed with a chat command -->
+        <cue name="On_Config_From_Chat" instantiate="true" version="1">
+          <conditions>
+            <event_ui_triggered screen="'TextReloadCommand'" control="'config'" />
+            <check_value value="['debugLevel', 'chatReply'].indexof.{@event.param3.$key}" />
+          </conditions>
+          <actions>
+            <include_actions ref="Ensure_Config" />
+            <set_value name="player.entity.$TextReloadCommandConfig.{'$' + event.param3.$key}" exact="event.param3.$value" />
+            <include_actions ref="ReadDebugChances" />
+            <debug_text text="'TextReloadCommand: Chat: %s set to %s'.[event.param3.$key, event.param3.$value]" chance="$debugChance" />
+            <include_actions ref="ClearDebugChances" />
+          </actions>
+        </cue>
+
+        <!-- Options page only when options_helper (and with it the Simple Menu API) is installed -->
+        <cue name="Register_Menu" instantiate="true" version="1">
+          <conditions>
+            <event_cue_signalled cue="@md.Simple_Menu_API.Reloaded" />
+            <check_value value="@md.Options_Helper.Add_Dropdown.exists" />
+          </conditions>
+          <actions>
+            <signal_cue_instantly cue="md.Simple_Menu_API.Register_Options_Menu"
+              param="table[
+                $id      = 'text_reload_command_options_menu',
+                $columns = 12,
+                $title   = {1972092444, 1},
+                $onOpen  = Options_Menu,
+              ]" />
+          </actions>
+        </cue>
+
+        <cue name="Options_Menu" instantiate="true" version="1">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <include_actions ref="Ensure_Config" />
+            <set_value name="$cfg" exact="player.entity.$TextReloadCommandConfig" />
+
+            <run_actions ref="md.Options_Helper.Add_Title_Row">
+              <param name="title" value="{1972092444, 90000}" />
+            </run_actions>
+
+            <run_actions ref="md.Options_Helper.Add_Checkbox">
+              <param name="id" value="'chatReply'" />
+              <param name="col" value="1" />
+              <param name="textColSpan" value="11" />
+              <param name="text" value="{1972092444, 90010}" />
+              <param name="data" value="$cfg" />
+              <param name="handle" value="Handle_Checkbox_Changed" />
+            </run_actions>
+
+            <run_actions ref="md.Options_Helper.Add_Title_Row">
+              <param name="title" value="{1972092444, 90900}" />
+            </run_actions>
+
+            <set_value name="$debugLevelOptions" exact="[
+              table[$text = {1972092444, 90911}, $value = 'none'],
+              table[$text = {1972092444, 90912}, $value = 'debug'],
+              table[$text = {1972092444, 90913}, $value = 'trace']
+            ]" />
+            <set_value name="$debugLevelIndexes" exact="['none', 'debug', 'trace']" />
+            <set_value name="$debugLevelCurrentIndex" exact="$debugLevelIndexes.indexof.{@$cfg.$debugLevel}" />
+            <do_if value="$debugLevelCurrentIndex == 0">
+              <set_value name="$debugLevelCurrentIndex" exact="1" />
+            </do_if>
+
+            <run_actions ref="md.Options_Helper.Add_Dropdown">
+              <param name="id" value="'debugLevel'" />
+              <param name="options" value="$debugLevelOptions" />
+              <param name="currentIndex" value="$debugLevelCurrentIndex" />
+              <param name="col" value="1" />
+              <param name="textColSpan" value="6" />
+              <param name="text" value="{1972092444, 90910}" />
+              <param name="dropdownColSpan" value="6" />
+              <param name="handle" value="Handle_Dropdown_Changed" />
+            </run_actions>
+
+            <remove_value name="$debugLevelOptions" />
+            <remove_value name="$debugLevelIndexes" />
+            <remove_value name="$debugLevelCurrentIndex" />
+            <remove_value name="$cfg" />
+          </actions>
+        </cue>
+
+        <cue name="Handle_Checkbox_Changed" instantiate="true" version="1">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <set_value name="$resultTable" exact="player.entity.$TextReloadCommandConfig" />
+            <include_actions ref="md.Options_Helper.Process_Checkbox_Changed" />
+            <remove_value name="$resultTable" />
+            <raise_lua_event name="'TextReloadCommand.ConfigChanged'" />
+            <include_actions ref="ReadDebugChances" />
+            <debug_text text="'TextReloadCommand: Options: %s set to %s'.[event.param.$echo.$valueId, @event.param.$checked]" chance="$debugChance" />
+            <include_actions ref="ClearDebugChances" />
+          </actions>
+        </cue>
+
+        <cue name="Handle_Dropdown_Changed" instantiate="true" version="1">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <set_value name="$resultTable" exact="player.entity.$TextReloadCommandConfig" />
+            <include_actions ref="md.Options_Helper.Process_Dropdown_Changed" />
+            <remove_value name="$resultTable" />
+            <raise_lua_event name="'TextReloadCommand.ConfigChanged'" />
+            <include_actions ref="ReadDebugChances" />
+            <debug_text text="'TextReloadCommand: Options: %s set to %s'.[event.param.$echo.$valueId, @event.param.$option.$value]" chance="$debugChance" />
+            <include_actions ref="ClearDebugChances" />
+          </actions>
+        </cue>
+
+      </cues>
+    </cue>
+  </cues>
+
+</mdscript>

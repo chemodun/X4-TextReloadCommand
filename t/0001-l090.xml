@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Text Reload Command - Turkish text, page 1972092444 -->
+<diff>
+  <add sel="/language">
+    <page id="1972092444" title="Text Reload Command" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Metin Yeniden Yükleme Komutu</t>
+      <t id="2">/reloadtext ve /rtx sohbet komutları, oyun çalışırken oyunun ve eklentilerin tüm metin dosyalarını yeniden yükler.</t>
+
+      <!-- Messages (1000) -->
+      <t id="1000">Metinler yeniden yüklendi.</t>
+      <t id="1001">Metinler yeniden yüklenemedi: %s</t>
+      <t id="1002">Hata ayıklama seviyesi: %s</t>
+      <t id="1003">Kullanım: /rtx - metinleri yeniden yükle; /rtx none|debug|trace - hata ayıklama seviyesi; /rtx reply on|off - yeniden yüklemeden sonra sohbette yanıt</t>
+      <t id="1004">Yeniden yüklemeden sonra sohbette yanıt: açık</t>
+      <t id="1005">Yeniden yüklemeden sonra sohbette yanıt: kapalı</t>
+
+      <!-- Section: General (90000) -->
+      <t id="90000">Genel</t>
+      <t id="90010">Yeniden yüklemeden sonra sohbette yanıt ver</t>
+
+      <!-- Section: Debug (90900) -->
+      <t id="90900">Hata Ayıklama</t>
+      <t id="90910">Hata Ayıklama Seviyesi</t>
+      <t id="90911">Yok</t>
+      <t id="90912">Hata Ayıklama</t>
+      <t id="90913">İzleme</t>
+    </page>
+  </add>
+</diff>

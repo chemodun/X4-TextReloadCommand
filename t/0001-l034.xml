@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Text Reload Command - Spanish text, page 1972092444 -->
+<diff>
+  <add sel="/language">
+    <page id="1972092444" title="Text Reload Command" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Comando de recarga de textos</t>
+      <t id="2">Los comandos de chat /reloadtext y /rtx recargan todos los archivos de texto del juego y de las extensiones mientras el juego está en marcha.</t>
+
+      <!-- Messages (1000) -->
+      <t id="1000">Textos recargados.</t>
+      <t id="1001">Error al recargar los textos: %s</t>
+      <t id="1002">Nivel de depuración: %s</t>
+      <t id="1003">Uso: /rtx - recargar textos; /rtx none|debug|trace - nivel de depuración; /rtx reply on|off - respuesta en el chat tras una recarga</t>
+      <t id="1004">Respuesta en el chat tras una recarga: activada</t>
+      <t id="1005">Respuesta en el chat tras una recarga: desactivada</t>
+
+      <!-- Section: General (90000) -->
+      <t id="90000">General</t>
+      <t id="90010">Responder en el chat tras una recarga</t>
+
+      <!-- Section: Debug (90900) -->
+      <t id="90900">Depuración</t>
+      <t id="90910">Nivel de depuración</t>
+      <t id="90911">Ninguno</t>
+      <t id="90912">Depuración</t>
+      <t id="90913">Rastreo</t>
+    </page>
+  </add>
+</diff>

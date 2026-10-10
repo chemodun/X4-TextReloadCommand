@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content
+  id=""
+  name="Text Reload Command"
+  author="Chem O`Dun"
+  version="100"
+  date="2026-10-10"
+  save="false"
+  sync="false"
+  description="Chat commands /reloadtext and /rtx reload every text file of the game and the extensions while the game runs.">
+  <text language="7"
+    description="Chat commands /reloadtext and /rtx reload every text file of the game and the extensions while the game runs."></text>
+  <!-- French -->
+  <text language="33"
+    description="Les commandes de chat /reloadtext et /rtx rechargent tous les fichiers de texte du jeu et des extensions pendant que le jeu tourne."></text>
+  <!-- Spanish -->
+  <text language="34"
+    description="Los comandos de chat /reloadtext y /rtx recargan todos los archivos de texto del juego y de las extensiones mientras el juego está en marcha."></text>
+  <!-- Italian -->
+  <text language="39"
+    description="I comandi di chat /reloadtext e /rtx ricaricano tutti i file di testo del gioco e delle estensioni mentre il gioco è in esecuzione."></text>
+  <!-- Czech -->
+  <text language="42"
+    description="Příkazy chatu /reloadtext a /rtx za běhu hry znovu načtou všechny textové soubory hry a rozšíření."></text>
+  <!-- English -->
+  <text language="44"
+    description="Chat commands /reloadtext and /rtx reload every text file of the game and the extensions while the game runs."></text>
+  <!-- Polish -->
+  <text language="48"
+    description="Polecenia czatu /reloadtext i /rtx przeładowują wszystkie pliki tekstowe gry i rozszerzeń podczas działania gry."></text>
+  <!-- German -->
+  <text language="49"
+    description="Die Chatbefehle /reloadtext und /rtx laden alle Textdateien des Spiels und der Erweiterungen neu, während das Spiel läuft."></text>
+  <!-- Portuguese -->
+  <text language="55"
+    description="Os comandos de chat /reloadtext e /rtx recarregam todos os arquivos de texto do jogo e das extensões enquanto o jogo está em execução."></text>
+  <!-- Japanese -->
+  <text language="81"
+    description="チャットコマンド /reloadtext と /rtx で、ゲームの実行中にゲームと拡張機能のすべてのテキストファイルを再読み込みします。"></text>
+  <!-- Korean -->
+  <text language="82"
+    description="채팅 명령 /reloadtext 및 /rtx는 게임 실행 중에 게임과 확장 기능의 모든 텍스트 파일을 다시 불러옵니다."></text>
+  <!-- Chinese Simplified -->
+  <text language="86"
+    description="聊天命令 /reloadtext 和 /rtx 可在游戏运行时重新加载游戏及扩展的所有文本文件。"></text>
+  <!-- Chinese Traditional -->
+  <text language="88"
+    description="聊天命令 /reloadtext 與 /rtx 可在遊戲執行時重新載入遊戲及擴充的所有文字檔案。"></text>
+  <!-- Turkish -->
+  <text language="90"
+    description="/reloadtext ve /rtx sohbet komutları, oyun çalışırken oyunun ve eklentilerin tüm metin dosyalarını yeniden yükler."></text>
+  <!-- Bulgarian -->
+  <text language="359"
+    description="Командите в чата /reloadtext и /rtx презареждат всички текстови файлове на играта и разширенията, докато играта работи."></text>
+  <!-- Ukrainian -->
+  <text language="380"
+    description="Команди чату /reloadtext і /rtx перезавантажують усі текстові файли гри та розширень під час роботи гри."></text>
+  <dependency version="800"></dependency>
+  <dependency id="ws_2042901274" optional="true" name="SirNukes Mod Support APIs" version="195"></dependency>
+  <dependency id="ws_3715253556" optional="true" name="Options Helper" version="110"></dependency>
+  <dependency id="ws_3770927339" optional="false" name="Print Extension List" version="100"></dependency>
+</content>

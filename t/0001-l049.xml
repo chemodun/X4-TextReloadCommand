@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Text Reload Command - German text, page 1972092444 -->
+<diff>
+  <add sel="/language">
+    <page id="1972092444" title="Text Reload Command" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Befehl zum Neuladen der Texte</t>
+      <t id="2">Die Chatbefehle /reloadtext und /rtx laden alle Textdateien des Spiels und der Erweiterungen neu, während das Spiel läuft.</t>
+
+      <!-- Messages (1000) -->
+      <t id="1000">Texte neu geladen.</t>
+      <t id="1001">Neuladen der Texte fehlgeschlagen: %s</t>
+      <t id="1002">Debug-Stufe: %s</t>
+      <t id="1003">Verwendung: /rtx - Texte neu laden; /rtx none|debug|trace - Debug-Stufe; /rtx reply on|off - Antwort im Chat nach dem Neuladen</t>
+      <t id="1004">Antwort im Chat nach dem Neuladen: an</t>
+      <t id="1005">Antwort im Chat nach dem Neuladen: aus</t>
+
+      <!-- Section: General (90000) -->
+      <t id="90000">Allgemein</t>
+      <t id="90010">Nach dem Neuladen im Chat antworten</t>
+
+      <!-- Section: Debug (90900) -->
+      <t id="90900">Debug</t>
+      <t id="90910">Debug-Stufe</t>
+      <t id="90911">Keine</t>
+      <t id="90912">Debug</t>
+      <t id="90913">Ablaufverfolgung</t>
+    </page>
+  </add>
+</diff>

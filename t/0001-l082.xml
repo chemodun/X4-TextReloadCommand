@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Text Reload Command - Korean text, page 1972092444 -->
+<diff>
+  <add sel="/language">
+    <page id="1972092444" title="Text Reload Command" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">텍스트 다시 불러오기 명령</t>
+      <t id="2">채팅 명령 /reloadtext 및 /rtx는 게임 실행 중에 게임과 확장 기능의 모든 텍스트 파일을 다시 불러옵니다.</t>
+
+      <!-- Messages (1000) -->
+      <t id="1000">텍스트를 다시 불러왔습니다.</t>
+      <t id="1001">텍스트 다시 불러오기 실패: %s</t>
+      <t id="1002">디버그 수준: %s</t>
+      <t id="1003">사용법: /rtx - 텍스트 다시 불러오기; /rtx none|debug|trace - 디버그 수준; /rtx reply on|off - 다시 불러온 후 채팅으로 응답</t>
+      <t id="1004">다시 불러온 후 채팅 응답: 켜짐</t>
+      <t id="1005">다시 불러온 후 채팅 응답: 꺼짐</t>
+
+      <!-- Section: General (90000) -->
+      <t id="90000">일반</t>
+      <t id="90010">다시 불러온 후 채팅으로 응답</t>
+
+      <!-- Section: Debug (90900) -->
+      <t id="90900">디버그</t>
+      <t id="90910">디버그 수준</t>
+      <t id="90911">없음</t>
+      <t id="90912">디버그</t>
+      <t id="90913">추적</t>
+    </page>
+  </add>
+</diff>

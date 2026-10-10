@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Text Reload Command - Polish text, page 1972092444 -->
+<diff>
+  <add sel="/language">
+    <page id="1972092444" title="Text Reload Command" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">Polecenie przeładowania tekstów</t>
+      <t id="2">Polecenia czatu /reloadtext i /rtx przeładowują wszystkie pliki tekstowe gry i rozszerzeń podczas działania gry.</t>
+
+      <!-- Messages (1000) -->
+      <t id="1000">Teksty przeładowane.</t>
+      <t id="1001">Przeładowanie tekstów nie powiodło się: %s</t>
+      <t id="1002">Poziom debugowania: %s</t>
+      <t id="1003">Użycie: /rtx - przeładuj teksty; /rtx none|debug|trace - poziom debugowania; /rtx reply on|off - odpowiedź na czacie po przeładowaniu</t>
+      <t id="1004">Odpowiedź na czacie po przeładowaniu: włączona</t>
+      <t id="1005">Odpowiedź na czacie po przeładowaniu: wyłączona</t>
+
+      <!-- Section: General (90000) -->
+      <t id="90000">Ogólne</t>
+      <t id="90010">Odpowiadaj na czacie po przeładowaniu</t>
+
+      <!-- Section: Debug (90900) -->
+      <t id="90900">Debugowanie</t>
+      <t id="90910">Poziom debugowania</t>
+      <t id="90911">Brak</t>
+      <t id="90912">Debugowanie</t>
+      <t id="90913">Ślad</t>
+    </page>
+  </add>
+</diff>

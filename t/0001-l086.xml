@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Text Reload Command - Chinese Simplified text, page 1972092444 -->
+<diff>
+  <add sel="/language">
+    <page id="1972092444" title="Text Reload Command" descr="" voice="no">
+      <!-- mod identity -->
+      <t id="1">文本重载命令</t>
+      <t id="2">聊天命令 /reloadtext 和 /rtx 可在游戏运行时重新加载游戏及扩展的所有文本文件。</t>
+
+      <!-- Messages (1000) -->
+      <t id="1000">文本已重新加载。</t>
+      <t id="1001">文本重新加载失败：%s</t>
+      <t id="1002">调试级别：%s</t>
+      <t id="1003">用法：/rtx - 重新加载文本；/rtx none|debug|trace - 调试级别；/rtx reply on|off - 重新加载后在聊天中回复</t>
+      <t id="1004">重新加载后在聊天中回复：开</t>
+      <t id="1005">重新加载后在聊天中回复：关</t>
+
+      <!-- Section: General (90000) -->
+      <t id="90000">通用</t>
+      <t id="90010">重新加载后在聊天中回复</t>
+
+      <!-- Section: Debug (90900) -->
+      <t id="90900">调试</t>
+      <t id="90910">调试级别</t>
+      <t id="90911">无</t>
+      <t id="90912">调试</t>
+      <t id="90913">跟踪</t>
+    </page>
+  </add>
+</diff>
