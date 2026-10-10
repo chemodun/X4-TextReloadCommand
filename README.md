@@ -13,7 +13,7 @@ Reload every text file of the game and of all enabled extensions while the game 
 ## Requirements
 
 - `X4: Foundations` 8.00 or newer.
-- `Print Extension List`, to record the game version and the enabled extensions in the log. Version `1.00` and upper is required.
+- Optional: `Print Extension List`, to record the game version and the enabled extensions in the log. Version `1.00` and upper.
   - It is available via Steam - [Print Extension List](https://steamcommunity.com/sharedfiles/filedetails/?id=3770927339)
   - Or via the Nexus Mods - [Print Extension List](https://www.nexusmods.com/x4foundations/mods/2191)
 - Optional: `Options Helper` with the `Mod Support APIs` by [SirNukes](https://next.nexusmods.com/profile/sirnukes?gameId=2659), for the in-game options page. Versions `1.10` and `1.95` and upper. Without them the settings are changed through the chat commands.
@@ -31,7 +31,7 @@ Reload every text file of the game and of all enabled extensions while the game 
 
 ## Installation
 
-You can download the latest version via Steam client - [Text Reload Command](https://steamcommunity.com/sharedfiles/filedetails/?id=)
+You can download the latest version via Steam client - [Text Reload Command](https://steamcommunity.com/sharedfiles/filedetails/?id=3817444504)
 Or you can do it via the Nexus Mods - [Text Reload Command](https://www.nexusmods.com/x4foundations/mods/2449)
 
 ## Save state
@@ -64,7 +64,7 @@ With `Options Helper` installed, the mod adds a `Text Reload Command` page to `S
 
 ## Changelog
 
-### [1.00] - 2026-10-??
+### [1.00] - 2026-10-11
 
 - **Added**
   - Initial release.
