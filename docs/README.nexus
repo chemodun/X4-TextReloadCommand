@@ -1,0 +1,77 @@
+[size=4][u]Text Reload Command[/u][/size]
+
+Reload every text file of the game and of all enabled extensions while the game runs, by typing [b]/reloadtext[/b] or [b]/rtx[/b] in the chat window. Made for modders: edit a [b]t/0001-l044.xml[/b], reload, and see the new text without restarting the game or loading a save.
+
+[size=3][u][b]Features[/b][/u][/size]
+[list]
+[*] [b][b]/reloadtext[/b][/b] and the short form [b][b]/rtx[/b][/b] in the chat window - re-read the text files ([b]t/0001*.xml[/b]) of the game and of every enabled extension, in the current game language.
+[*] A changed text shows its new value, a newly added text id becomes available at once.
+[*] A text that refers to another one with [b]{page,id}[/b] follows the change of the referred text at once.
+[*] The result is written to the game log and, unless switched off, printed into the chat window. A failure is always printed.
+[*] The settings can be changed right from the chat: [b]/rtx none|debug|trace[/b] sets the debug level, [b]/rtx reply on|off[/b] switches the chat reply after a reload.
+[/list]
+[size=3][u][b]Requirements[/b][/u][/size]
+[list]
+[*] [b]X4: Foundations[/b] 8.00 or newer.
+[*] Optional: [b]Print Extension List[/b], to record the game version and the enabled extensions in the log. Version [b]1.00[/b] and upper.
+[list]
+[*] It is available via Steam - [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3770927339]Print Extension List[/url]
+[*] Or via the Nexus Mods - [url=https://www.nexusmods.com/x4foundations/mods/2191]Print Extension List[/url]
+[/list]
+[*] Optional: [b]Options Helper[/b] with the [b]Mod Support APIs[/b] by [url=https://next.nexusmods.com/profile/sirnukes?gameId=2659]SirNukes[/url], for the in-game options page. Versions [b]1.10[/b] and [b]1.95[/b] and upper. Without them the settings are changed through the chat commands.
+[list]
+[*] Available via Steam - [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3715253556]Options Helper[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2042901274]SirNukes Mod Support APIs[/url]
+[*] Or via the Nexus Mods - [url=https://www.nexusmods.com/x4foundations/mods/2089]Options Helper[/url] and [url=https://www.nexusmods.com/x4foundations/mods/503]Mod Support APIs[/url]
+[/list]
+[/list]
+[size=3][u][b]Limitations[/b][/u][/size]
+[list]
+[*] This mod requires a [b]Protected UI Mode[/b] in the Extensions settings to be disabled.
+[*] Windows game only: the native Linux build is not supported, the reload command answers with a message and does nothing. The Windows game running on Linux through Proton or Wine should work.
+[*] A reload only adds and updates texts, it never removes them: a text id or a whole page removed from a file, or a page whose id was changed, stays in the game with its last text until the next start.
+[*] Mission Director scripts that write a text as [b]{page,id}[/b] keep the old text until [b]/refreshmd[/b]. Scripts that use [b]readtext[/b] get the new one at once.
+[*] Most of the UI shows the new text the next time a menu is drawn, but a UI extension that copied its texts when it was loaded keeps the old ones. For the best result run [b]/reloadui[/b] after the reload, the same way [b]/refreshmd[/b] is recommended for texts used in Mission Director scripts.
+[*] Only the text files already known to the game are re-read: a text file added to an extension while the game runs may not be found.
+[/list]
+[size=3][u][b]Installation[/b][/u][/size]
+
+You can download the latest version via Steam client - [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3817444504]Text Reload Command[/url]
+Or you can do it via the Nexus Mods - [url=https://www.nexusmods.com/x4foundations/mods/2449]Text Reload Command[/url]
+
+[size=3][u][b]Save state[/b][/u][/size]
+
+[b]No[/b] (removing the extension does not break saves).
+
+[size=3][u][b]Usage[/b][/u][/size]
+[list=1]
+[*] Edit the text file of your extension in the game's [b]extensions[/b] folder.
+[*] Open the chat window and type [b]/reloadtext[/b] or [b]/rtx[/b].
+[*] The chat window answers [b]Texts reloaded.[/b], or the reason when the reload failed.
+[*] [b]/rtx reply off[/b] stops the success line in the chat, [b]/rtx reply on[/b] brings it back.
+[*] [b]/rtx none[/b], [b]/rtx debug[/b] or [b]/rtx trace[/b] sets the debug level. Any other parameter prints a short usage line.
+[/list]
+[size=3][u][b]Extension Options[/b][/u][/size]
+
+With [b]Options Helper[/b] installed, the mod adds a [b]Text Reload Command[/b] page to [b]Settings[/b] - [b]Extensions Options[/b]:
+[list]
+[*] [b]Reply in chat after a reload[/b] - print [b]Texts reloaded.[/b] in the chat window after a successful reload. On by default; a failure is printed anyway.
+[*] [b]Debug Level[/b] - how much the mod writes to the game log. [b]None[/b] is the default and keeps the log clean, [b]Debug[/b] records one line per action taken, and [b]Trace[/b] adds the detail. Use [b]Debug[/b] or [b]Trace[/b] when preparing a bug report, then set it back to [b]None[/b].
+[/list]
+[size=3][u][b]Credits[/b][/u][/size]
+[list]
+[*] [b]Author[/b]: Chem O`Dun, on [url=https://next.nexusmods.com/profile/ChemODun/mods?gameId=2659]Nexus Mods[/url] and [url=https://steamcommunity.com/id/chemodun/myworkshopfiles/?appid=392160]Steam Workshop[/url]
+[*] [i]"X4: Foundations"[/i] is a trademark of [url=https://www.egosoft.com]Egosoft[/url].
+[/list]
+[size=3][u][b]Acknowledgements[/b][/u][/size]
+[list]
+[*] [url=https://www.egosoft.com]EGOSOFT[/url] - for the X series.
+[/list]
+[size=3][u][b]Changelog[/b][/u][/size]
+
+[size=3][u][i][1.00] - 2026-10-11[/i][/u][/size]
+[list]
+[*] [b]Added[/b]
+[list]
+[*] Initial release.
+[/list]
+[/list]
